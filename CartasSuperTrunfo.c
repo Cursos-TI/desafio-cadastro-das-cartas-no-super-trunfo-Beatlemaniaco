@@ -39,6 +39,8 @@ do{
     printf("Digite o PIB da cidade: \n");
     scanf("%f", &pib);
 
+    //Caculando Densidade Populacional e PIB per Capita
+
     float densidade_populacional = (float) populacao / area;
     float pib_per_capita = (float) pib / populacao;
    
