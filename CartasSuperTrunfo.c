@@ -1,11 +1,11 @@
 #include <stdio.h>
-#include<string.h>
+#include <string.h>
 
     // Criando as Variáveis
 
 int main() {
 
-    char codigo[3];
+    char codigo[4];
     char nome[20];
     int populacao;
     int turisticos;
@@ -21,10 +21,10 @@ do{
     printf("Digite o código da cidade(Ex: A01, H03): \n");
     scanf("%s", codigo);
 
+
     printf("Digite o nome da cidade: \n");
     getchar();
     fgets(nome, sizeof(nome), stdin);
-
     nome[strcspn(nome, "\n")] = '\0';
 
     printf("Digite a população: \n");
@@ -38,14 +38,19 @@ do{
 
     printf("Digite o PIB da cidade: \n");
     scanf("%f", &pib);
-    
+
+    float densidade_populacional = (float) populacao / area;
+    float pib_per_capita = (float) pib / populacao;
+   
     //Exibição de Dados das Cartas
 
     printf("Código da Cidade: %s\n", codigo);
     printf("Nome da Cidade: %s\n",nome);
     printf("População: %d\n",populacao);
-    printf("Área: %.2f\n",area);
+    printf("Área: %.2f km²\n",area);
     printf("PIB: %.2f\n", pib);
+    printf("Densidade Populacional: %.2f Habitantes por km²\n", densidade_populacional);
+    printf("PIB per Capita: %.2f por pessoa\n", pib_per_capita);
 
     printf("Deseja cadastrar outra carta? (s/n): \n");
     scanf(" %c", &continuar);
