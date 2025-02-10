@@ -6,7 +6,8 @@
 int main() {
 
     char codigo[4];
-    char nome[20];
+    char estado[20];
+    char cidade[20];
     int populacao;
     int turisticos;
     float area;
@@ -21,11 +22,14 @@ do{
     printf("Digite o código da cidade(Ex: A01, H03): \n");
     scanf("%s", codigo);
 
+    printf("Digite o nome do estado: \n");
+    getchar();
+    fgets(estado, sizeof(estado), stdin);
+    estado[strcspn(estado, "\n")] = '\0';
 
     printf("Digite o nome da cidade: \n");
-    getchar();
-    fgets(nome, sizeof(nome), stdin);
-    nome[strcspn(nome, "\n")] = '\0';
+    fgets(cidade, sizeof(cidade), stdin);
+    cidade[strcspn(cidade, "\n")] = '\0';
 
     printf("Digite a população: \n");
     scanf("%d", &populacao);
@@ -47,7 +51,8 @@ do{
     //Exibição de Dados das Cartas
 
     printf("Código da Cidade: %s\n", codigo);
-    printf("Nome da Cidade: %s\n",nome);
+    printf("Nome do Estado: %s\n",estado);
+    printf("Nome da Cidade: %s\n",cidade);
     printf("População: %d\n",populacao);
     printf("Área: %.2f km²\n",area);
     printf("PIB: %.2f\n", pib);
